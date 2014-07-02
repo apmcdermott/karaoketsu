@@ -48,4 +48,4 @@ def follow_links(alpha_names, letter)
   end
 end
 
-follow_links(i)
+follow_links(i, "i")
