@@ -30,7 +30,7 @@ x = []
 y = ["Yngwie J. Malmsteen", "Yohio"]
 z = ["Zack de la Rocha", "Zak Stevens", "Zooey Deschanel", "Zoran Mišić", "Z.P. Theart", "Zubin Varla"]
 
-letters = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+letters = [b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
 
 def follow_links(alpha_names, letter)
   mechanize = Mechanize.new
@@ -40,7 +40,7 @@ def follow_links(alpha_names, letter)
     link_href = mechanize.get(link.href)
     title = link_href.search("h1.page-title > a")[0].text
     content = link_href.search("div.content > div")[0].text
-    File.open("ranges_output_#{letter}.html", 'a') do |file|
+    File.open("ranges_output_#{letter}.txt", 'a') do |file|
       file.puts title
       file.puts content
       file.puts "\n"
@@ -48,10 +48,9 @@ def follow_links(alpha_names, letter)
   end
 end
 
-# follow_links(i, "i")
+follow_links(c, "c")
 
-letters.each do |letter|
-  i = 0
-  follow_links(letter, "#{letters[i]}")
-  i++
-end
+# This overloads the server, so don't use it
+# letters.each do |letter|
+#   follow_links(letter, "#{letter[0].downcase[0]}")
+# end
