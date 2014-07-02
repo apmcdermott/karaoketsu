@@ -29,3 +29,14 @@ w = ["Warrel Dane", "Waylon Jennings", "\"Weird Al\" Yankovic", "Wes Borland", "
 x = []
 y = ["Yngwie J. Malmsteen", "Yohio"]
 z = ["Zack de la Rocha", "Zak Stevens", "Zooey Deschanel", "Zoran Mišić", "Z.P. Theart", "Zubin Varla"]
+
+letters = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+
+def follow_links(alpha_names)
+  mechanize = Mechanize.new
+  page = mechanize.get('http://therangeplace.forummotions.com/t293-singer-index-wip')
+  alpha_names.each do |name|
+    link = page.link_with(text: name)
+    link_href = mechanize.get(link.href)
+  end
+end
