@@ -48,4 +48,10 @@ def follow_links(alpha_names, letter)
   end
 end
 
-follow_links(i, "i")
+# follow_links(i, "i")
+
+letters.each do |letter|
+  i = 0
+  follow_links(letter, "#{letters[i]}")
+  i++
+end
