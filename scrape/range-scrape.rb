@@ -40,5 +40,10 @@ def follow_links(alpha_names)
     link_href = mechanize.get(link.href)
     title = link_href.search("h1.page-title > a")[0].text
     content = link_href.search("div.content > div")[0].text
+    File.open("ranges_output.html", 'a') do |file|
+      file.puts title
+      file.puts content
+      file.puts "\n"
+    end
   end
 end
