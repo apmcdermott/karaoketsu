@@ -47,3 +47,5 @@ def follow_links(alpha_names)
     end
   end
 end
+
+follow_links(i)
