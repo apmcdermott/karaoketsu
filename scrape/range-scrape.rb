@@ -32,7 +32,7 @@ z = ["Zack de la Rocha", "Zak Stevens", "Zooey Deschanel", "Zoran Mišić", "Z.P
 
 letters = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
 
-def follow_links(alpha_names)
+def follow_links(alpha_names, letter)
   mechanize = Mechanize.new
   page = mechanize.get('http://therangeplace.forummotions.com/t293-singer-index-wip')
   alpha_names.each do |name|
@@ -40,7 +40,7 @@ def follow_links(alpha_names)
     link_href = mechanize.get(link.href)
     title = link_href.search("h1.page-title > a")[0].text
     content = link_href.search("div.content > div")[0].text
-    File.open("ranges_output.html", 'a') do |file|
+    File.open("ranges_output_#{letter}.html", 'a') do |file|
       file.puts title
       file.puts content
       file.puts "\n"
