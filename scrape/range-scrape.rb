@@ -38,5 +38,7 @@ def follow_links(alpha_names)
   alpha_names.each do |name|
     link = page.link_with(text: name)
     link_href = mechanize.get(link.href)
+    title = link_href.search("h1.page-title > a")[0].text
+    content = link_href.search("div.content > div")[0].text
   end
 end
