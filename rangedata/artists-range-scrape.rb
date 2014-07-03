@@ -13,7 +13,7 @@ g = ["Gary Barlow", "Gary Cherone", "Gary Moore", "Geddy Lee", "Gene Simmons", "
 h = ["Hansi Kürsch", "Happy Rhodes", "Harry \"The Tyrant\" Conklin", "Harry McVeigh", "Hayley Williams", "Heath King", "Heikki Pöyhiä", "Helen Marnie", "Hope Sandoval", "Howard Jones", "Huey Lewis", "Hugh Laurie"]
 i = ["Ian Astbury", "Ian Curtis", "Ian Gillan", "Ian Kenny", "Ian Watkins", "ICS Vortex", "Iggy Pop", "Ivan Rebroff"]
 j = ["Jack Black", "Jackie Wilson", "Jack Russell", "Jack White", "Jacoby Shaddix", "Jahméne Douglas", "Jake Shears", "Jakob Samuel", "James Blunt", "James Bourne", "James Christian", "James Earl Jones", "James Hetfield", "James LaBrie", "James Morrison", "Jan Jämte ", "Jani Lane", "Janis Joplin", "Janove Ottesen", "Jared Leto", "Jari Mäenpää", "Jarle Bernhoft", "Jason McMaster", "JC Chasez", "J.D. Sumner", "Jeff Buckley", "Jeff Keith", "Jeff Lynne", "Jeff Martin (Racer X)", "Jeff Martin (The Tea Party)", "Jeff Scott Soto", "Jens Westin", "Jerry Cantrell", "Jim Carrey", "Jim Gillette", "Jimi Hendrix", "Jim Morrison", "Jimmy Barnes", "Jimmy Ellis", "Jimmy Gnecco", "Jimmy \"The Rev\" Sullivan", "Jim Parsons", "Jizzy Pearl", "Joakim Nilsson", "Joakim Thåström", "Jocke Berg", "Joe Duplantier", "Joe Elliot", "Joel O'Keeffe", "Joe Lynn Turner", "Joey Belladonna", "Joey Tempest", "John Arch", "John Corabi", "John DiMaggio", "John Englebert", "John Entwhistle", "John Farnham", "John Fogerty", "John Garcia", "John \"Harv\" Harbinson", "John Lennon", "Johnny Cash", "Johnny Cook", "Johnny Gioeli", "Johnny Robinson", "Johnny Winter", "John Petrucci", "John Sykes", "John West", "Jon Anderson", "Jon Bon Jovi", "Jon Foreman", "Jonny Lindkvist", "Jon Oliva", "Jon Schaffer", "Jónsi Þór Birgisson", "Jordan Rudess", "Jørn Lande", "José Andrëa", "Jose Vicente Broseta", "Josh Groban", "Josh Homme", "Josh Turner", "JP Leppäluoto", "Judika", "Julian Casablancas", "Justin Bieber", "Justin Hawkins", "Justin Timberlake"]
-k = ["Kai Hansen", "Karen Carpenter", "Karen O", "Kari Tapio", "Kate Bush", "Katharine McPhee", "Katy Perry", "Kellin Quinn", "Kelly Clarkson", "Kelly Holland", "Kelly Jones", "Kenny Hickey", "Ken Tamplin", "Kesha Sebert (Ke$ha)", "Kevin Ayers", "Kevin DuBrow", "Kim Benzie", "Kimbra", "King Diamond", "Kip Winger", "Kirka", "Klaus Meine", "Klaus Nomi", "Klayton", "Kurt Cobain", "KT Tunstall", "Kyo"]
+k = ["Kai Hansen", "Karen Carpenter", "Karen O", "Kari Tapio", "Kate Bush", "Katharine McPhee", "Katy Perry", "Kellin Quinn", "Kelly Clarkson", "Kelly Holland", "Kelly Jones", "Kenny Hickey", "Ken Tamplin", "Kevin Ayers", "Kevin DuBrow", "Kim Benzie", "Kimbra", "King Diamond", "Kip Winger", "Kirka", "Klaus Meine", "Klaus Nomi", "Klayton", "Kurt Cobain", "KT Tunstall", "Kyo"]
 l = ["Lady Gaga", "Lana Del Rey", "Lance King", "Lauri Ylönen", "Layne Staley", "Lemmy Kilmister", "Lenny Kravitz", "Leo Jiménez", "Les Claypool", "Levi Stubbs", "Liam Gallagher", "Lights Poxleitner", "Lil' Jon", "Lily Allen", "Lindsey Buckingham", "Lisa Gerrard", "Liv Kristine", "Liz Fraser", "Lou Gramm", "Luciano Pavarotti"]
 m = ["Manuel Munoz", "Marc Bolan", "Marcelo Corvalan", "Marco Borsato", "Marco Hietala", "Mariah Carey", "Maria McKee ", "Marian Gold", "Marie Fredriksson", "Marilyn Manson", "Marina Diamandis", "Mark Boals", "Mark Feehily", "Mark Hoppus", "Mark Slaughter", "Markus Krunegård", "Martin Grech", "Martin Johnson", "Martin L. Gore", "Mats Levén", "Matt Barlow", "Matt Bellamy", "Matt Heafy", "Matt Tuck", "Matthew Rose", "Matthias Blad", "Max Bacon", "Maximum the Ryō", "Maynard James Keenan", "Meat Loaf", "Michael Bolton", "Michael Hutchence", "Michael Jackson", "Michael \"Jag\" Jagmin", "Michael Kiske", "Michael Monroe", "Michael Poulsen", "Michael Stipe", "Michael Winslow", "Michele Luppi", "Mickey Thomas", "Mick Hucknall", "Mick Jagger", "Midge Ure", "Midnight", "Miguel Bose", "Mikael Åkerfeldt", "Mike Baker", "Mike Love", "Mike Patton", "Mike Oldfield", "Mike Portnoy", "Miljenko Matijevic", "Mille Petrozza", "Minnie Riperton", "Mira Aroyo", "Morrissey", "Morten Harket", "Moto Boy", "M. Shadows", "Myles Kennedy"]
 n = ["Nanna Bryndís Hilmarsdóttir", "Nate Ruess", "Neil Diamond", "Neil Patrick Harris", "Nick Drake", "Nick Pitera", "Nick Schilder", "Nils Frykdahl", "Nils K. Rue", "Nils Patrik Johansson", "Nina Hagen", "Nino Bravo", "Noddy Holder", "Noel Gallagher"]
@@ -30,7 +30,7 @@ x = []
 y = ["Yngwie J. Malmsteen", "Yohio"]
 z = ["Zack de la Rocha", "Zak Stevens", "Zooey Deschanel", "Zoran Mišić", "Z.P. Theart", "Zubin Varla"]
 
-letters = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+letters = [y, z]
 
 def follow_links(alpha_names, letter)
   mechanize = Mechanize.new
@@ -39,7 +39,7 @@ def follow_links(alpha_names, letter)
   alpha_names.each do |name|
     link = page.link_with(text: name)
     link_href = mechanize.get(link.href)
-    title = link_href.search("h1.page-title > a")[0].text
+    title = link_href.search("h1.page-title > a")[0]
     content = link_href.search("div.content > div")[0].text
     File.open("ranges_output_#{letter}.txt", 'a') do |file|
       file.puts title
@@ -50,8 +50,8 @@ def follow_links(alpha_names, letter)
   end
 end
 
-# follow_links(c, "c")
+follow_links(k, "k")
 
-letters.each do |letter|
-  follow_links(letter, "#{letter[0].downcase[0]}")
-end
+# letters.each do |letter|
+#   follow_links(letter, "#{letter[0].downcase[0]}")
+# end
