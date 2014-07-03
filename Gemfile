@@ -11,7 +11,7 @@ gem 'jbuilder'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'mechanize'
 gem 'dotenv-rails'
-gem 'echonest-ruby-api'
+gem 'echowrap', :git=>'git://github.com/apmcdermott/echowrap'
 
 group :development do
   gem 'pry-rails'
