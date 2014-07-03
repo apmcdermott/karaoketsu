@@ -47,11 +47,17 @@ GEM
     dotenv-deployment (0.0.2)
     dotenv-rails (0.11.1)
       dotenv (= 0.11.1)
+    echonest-ruby-api (0.7.0)
+      httparty
+      multi_json
     erubis (2.7.0)
     execjs (2.2.1)
     hike (1.2.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.9)
     jbuilder (2.1.1)
       activesupport (>= 3.0.0, < 5)
@@ -77,6 +83,7 @@ GEM
     mini_portile (0.6.0)
     minitest (5.3.5)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
     nokogiri (1.6.2.1)
@@ -156,7 +163,8 @@ DEPENDENCIES
   better_errors
   coffee-rails (~> 4.0.0)
   dotenv-rails
-  jbuilder (~> 2.0)
+  echonest-ruby-api
+  jbuilder
   jquery-rails
   mechanize
   pg
