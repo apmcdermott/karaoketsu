@@ -170,7 +170,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   dotenv-rails
   echowrap!
-  jbuilder
+  jbuilder (~> 2.0)
   jquery-rails
   mechanize
   pg
