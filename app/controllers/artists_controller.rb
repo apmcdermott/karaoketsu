@@ -1,19 +1,10 @@
 class ArtistsController < ApplicationController
   def index
-    @artists = Artist.all
-
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render json: @artists }
-    # end
+    @artists = Artist.all.order(:name)
   end
 
   def show
     @artist = Artist.find(params[:id])
-
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render json: @artist }
-    # end
+    @songs = @artist.songs
   end
 end

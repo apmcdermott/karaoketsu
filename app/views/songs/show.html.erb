@@ -1,0 +1,7 @@
+<div class="col-xs-12">
+<h2><%= @song.title %></h2>
+
+by <%= @song.artist.name %><br>
+in the key of <%= @song.key %><br>
+ranging from <%= @song.midi_to_named(@song.range_low) %> to <%= @song.midi_to_named(@song.range_high) %>
+</div>

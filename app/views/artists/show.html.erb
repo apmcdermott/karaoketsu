@@ -1,10 +1,12 @@
+<div class="col-xs-12">
 <h2><%= @artist.name %></h2>
 
-<%= @artist.gender %><br>
-<%= @artist.midi_to_named(@artist.range_low) %> to <%= @artist.midi_to_named(@artist.range_high) %>
-
+Gender: <%= @artist.gender.capitalize %><br>
+Range: <%= @artist.midi_to_named(@artist.range_low) %> to <%= @artist.midi_to_named(@artist.range_high) %><br>
+Songs:
 <ul>
-<% @artist.songs.each do |song| %>
-  <li><%= song.title %></li>
-<% end %>
+  <% @songs.each do |song| %>
+    <li><%= link_to song.title, song_path(id: song.id) %></li>
+  <% end %>
 </ul>
+</div>

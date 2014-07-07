@@ -7,9 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Karao-ke-tsu</h1>
 
-<%= yield %>
+<div class="container">
+
+
+  <h1>Derp Flerp Smerp</h1>
+
+  <h4>
+    <%= link_to '(home)', root_path %> .
+    <%= link_to '(artists)', artists_path %>
+  </h4>
+
+  <%= yield %>
+
+
+</div>
 
 </body>
 </html>

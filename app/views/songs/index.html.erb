@@ -2,7 +2,7 @@
   <% @songs.each do |song| %>
     <li>
       <strong><%= song.title %></strong><br>
-      <em><%= song.artist.name %></em><br>
+      <em><%= link_to song.artist.name, song.artist_path %></em><br>
       <%= song.midi_to_named(song.range_low) %> to <%= song.midi_to_named(song.range_high) %>
       <br> <br>
     </li>

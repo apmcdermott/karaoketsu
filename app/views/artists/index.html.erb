@@ -1,9 +1,5 @@
-<ul>
+<div class="col-xs-12">
   <% @artists.each do |artist| %>
-    <li>
-      <strong><%= link_to artist.name, artist %></strong><br>
-      <%= artist.midi_to_named(artist.range_low) %> to <%= artist.midi_to_named(artist.range_high) %>
-      <br> <br>
-    </li>
+    <h2><%= link_to artist.name, artist %> <small><%= artist.voice_type %></small></h2>
   <% end %>
-</ul>
+</div>
