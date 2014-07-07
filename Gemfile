@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'mechanize'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'echowrap'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 group :development do
   gem 'pry-rails'
