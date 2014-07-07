@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'mechanize'
 gem 'dotenv-rails', :groups => [:development, :test]
-gem 'echowrap', :git=>'git://github.com/apmcdermott/echowrap'
+gem 'echowrap'
 
 group :development do
   gem 'pry-rails'
