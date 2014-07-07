@@ -1,0 +1,10 @@
+<h2><%= @artist.name %></h2>
+
+<%= @artist.gender %><br>
+<%= @artist.midi_to_named(@artist.range_low) %> to <%= @artist.midi_to_named(@artist.range_high) %>
+
+<ul>
+<% @artist.songs.each do |song| %>
+  <li><%= song.title %></li>
+<% end %>
+</ul>
