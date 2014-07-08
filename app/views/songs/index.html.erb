@@ -1,10 +1,13 @@
-<ul>
+<h2><%= @page_title %></h2>
+  <p>
+    <%= link_to "title", sort: "title" %> .
+    <%= link_to "artist", sort: "artists.name" %> .
+    <%= link_to "highest note", sort: "range_high" %> .
+    <%= link_to "lowest note", sort: "range_low" %>
+  </p>
   <% @songs.each do |song| %>
-    <li>
-      <strong><%= song.title %></strong><br>
-      <em><%= link_to song.artist.name, song.artist_path %></em><br>
-      <%= song.midi_to_named(song.range_low) %> to <%= song.midi_to_named(song.range_high) %>
-      <br> <br>
-    </li>
+    <p class="h3"><%= link_to song.title, song_path(song.id) %></p>
+    <p class="h4"><%= link_to song.artist_name, artist_path(id: song.artist_id) %></p>
+    <p><%= song.midi_to_named(song.range_low) %> &ndash; <%= song.midi_to_named(song.range_high) %></p>
+    <hr>
   <% end %>
-</ul>
