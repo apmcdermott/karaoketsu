@@ -5,7 +5,7 @@ helper_method :sort_column, :sort_direction
     if params[:tag]
       @songs = Song.joins(:artist).tagged_with(params[:tag]).order(sort_column + ' ' + sort_direction).preload(:artist)
       tag_name = params[:tag]
-      @page_title = "Tagged with '#{tag_name}'"
+      @page_title = "Songs tagged with '#{tag_name}'"
     else
       @songs = Song.joins(:artist).all.order(sort_column + ' ' + sort_direction).preload(:artist)
       @page_title = "All Songs"

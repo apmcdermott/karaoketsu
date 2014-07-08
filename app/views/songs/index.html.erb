@@ -1,9 +1,20 @@
 <h2><%= @page_title %></h2>
-  <p>
-    <%= link_to "title", sort: "title" %> .
-    <%= link_to "artist", sort: "artists.name" %> .
-    <%= link_to "highest note", sort: "range_high" %> .
-    <%= link_to "lowest note", sort: "range_low" %>
+  <p>Sort By:
+    <button class="btn btn-default">
+      <%= sortable "title", "title" %>
+    </button>
+
+    <button class="btn btn-default">
+      <%= sortable "artists.name", "artist" %>
+    </button>
+
+    <button class="btn btn-default">
+      <%= sortable "range_high", "highest note", "desc" %>
+    </button>
+
+    <button class="btn btn-default">
+      <%= sortable "range_low", "lowest note" %>
+    </button>
   </p>
   <% @songs.each do |song| %>
     <p class="h3"><%= link_to song.title, song_path(song.id) %></p>
