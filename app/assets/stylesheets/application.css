@@ -16,3 +16,46 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.sorter.disabled:after {
+  width: 5px;
+  height: 0;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+
+.asc:after {
+  width: 0;
+  height: 0;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+
+.desc:after {
+  width: 0;
+  height: 0;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #333;
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 5px;
+}
