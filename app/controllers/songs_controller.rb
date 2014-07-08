@@ -1,12 +1,13 @@
 class SongsController < ApplicationController
+helper_method :sort_column, :sort_direction
 
   def index
     if params[:tag]
-      @songs = Song.joins(:artist).tagged_with(params[:tag]).order(params[:sort]).preload(:artist)
+      @songs = Song.joins(:artist).tagged_with(params[:tag]).order(sort_column + ' ' + sort_direction).preload(:artist)
       tag_name = params[:tag]
       @page_title = "Tagged with '#{tag_name}'"
     else
-      @songs = Song.joins(:artist).all.order(params[:sort])
+      @songs = Song.joins(:artist).all.order(sort_column + ' ' + sort_direction).preload(:artist)
       @page_title = "All Songs"
     end
   end
@@ -27,5 +28,14 @@ class SongsController < ApplicationController
 
   end
 
+private
+
+  def sort_column
+    %w(title artists.name range_high range_low).include?(params[:sort]) ? params[:sort] : "title"
+  end
+
+  def sort_direction
+    %w(asc desc).include?(params[:direction]) ? params[:direction] : "asc"
+  end
 
 end
