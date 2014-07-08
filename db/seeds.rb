@@ -19,9 +19,16 @@ s7 = Song.create(title: "All of Me", artist: jlegend, range_low: 60, range_high:
 s8 = Song.create(title: "Let It Go", artist: imenzel, range_low: 53, range_high: 75, key: "Ab maj")
 
 s2.tag_list.add("belting", "warm tones", "soulful")
+s2.save
 s3.tag_list.add("bright tones")
+s3.save
 s4.tag_list.add("belting", "sassy")
+s4.save
 s5.tag_list.add("belting")
+s5.save
 s6.tag_list.add("ballad", "breathy", "sweet")
+s6.save
 s7.tag_list.add("ballad", "belting", "falsetto")
+s7.save
 s8.tag_list.add("belting", "soundtrack")
+s8.save
