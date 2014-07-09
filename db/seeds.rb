@@ -9,7 +9,7 @@ mandy = User.create(email: "traviata@gmail.com", password: "dickslol", admin: tr
 puts "Creating dude singers"
 mjackson = Artist.create(name: "Michael Jackson", gender: "male", range_low: 61, range_high: 85, voice_type: "Tenor")
 jlegend = Artist.create(name: "John Legend", gender: "male", range_low: 60, range_high: 82, voice_type: "Baritone")
-jtimberlake = Artist.create(name:"Justin Timberlake", gender: "male", range: "F#2-B5", voice_type: "Tenor")
+jtimberlake = Artist.create(name:"Justin Timberlake", gender: "male", range_low: 42, range_high: 83, voice_type: "Tenor")
 esheeran = Artist.create(name:"Ed Sheeran", gender: "male", range_low: 57, range_high: 81, voice_type: "Tenor")
 
 puts "Creating lady singers"
