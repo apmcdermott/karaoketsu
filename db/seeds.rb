@@ -4,7 +4,7 @@ Song.delete_all
 User.delete_all
 
 puts "Creating admin"
-mandy = User.create(email: "traviata@gmail.com", password: "dickslol", admin: true)
+mandy = User.create(email: "mandy@example.com", password: "amoreappropriatepassword", admin: true)
 
 puts "Creating dude singers"
 mjackson = Artist.create(name: "Michael Jackson", gender: "male", range_low: 61, range_high: 85, voice_type: "Tenor")
