@@ -26,6 +26,10 @@ helper_method :sort_column, :sort_direction
 
     @tempo = song_info.audio_summary.attrs[:tempo]
 
+    echonest_key = song_info.audio_summary.attrs[:key]
+    echonest_mode = song_info.audio_summary.attrs[:mode]
+    @key = @song.key_name(echonest_key, echonest_mode)
+
   end
 
 private
