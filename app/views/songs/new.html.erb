@@ -1,13 +1,24 @@
 <h2>New Song</h2>
 
 <%= form_for @song, url: {action: "create"} do |f| %>
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title %><br>
+  <p>
+    <%= f.label :title, "Title" %><br>
+    <%= f.text_field :title %>
+  </p>
 
-  <%= f.label :artist_name, "Artist" %>
-  <%= f.text_field :artist_name %><br>
+  <p>
+    <%= f.fields_for :artists do |artists_form| %>
+      <%= artists_form.label :name, "Artist" %><br>
+      <%= artists_form.text_field :artist_name %>
+    <% end %>
+  </p>
 
-  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-  <%= f.text_field :tag_list %>
-  <%= f.submit "Create" %>
+  <p>
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
 <% end %>

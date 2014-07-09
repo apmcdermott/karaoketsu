@@ -19,12 +19,10 @@ cperri = Artist.create(name: "Christina Perri", gender: "female", range_low: 53,
 imenzel = Artist.create(name: "Idina Menzel", gender: "female", range_low: 53, range_high: 82, voice_type: "Mezzo-Soprano")
 adele = Artist.create(name: "Adele", gender: "female", range_low: 48, range_high: 76, voice_type: "Contralto")
 awinehouse = Artist.create(name: "Amy Winehouse", gender: "female", range_low: 50, range_high: 87, voice_type: "Contralto")
-ejames = Artist.create(name: "Etta James", gender: "female", range_low: 44, range_high: 83, voice_type: "Contralto")
-fhill = Artist.create(name: "Faith Hill", gender: "female", range_low: 52, range_high: 76, voice_type: "Mezzo-Soprano")
-hwilliams = Artist.create(name: "Hayley Williams", gender: "female", range_low: 46, range_high: 78, voice_type: "Mezzo-Soprano")
+hwilliams = Artist.create(name: "Hayley Williams", alt_name: "Paramore", gender: "female", range_low: 46, range_high: 78, voice_type: "Mezzo-Soprano")
 
 puts "Creating songs"
-billiejean = Song.create(title: "Billie Jean", artist: mjackson, range_low: 61, range_high: 85, key: "F#", mode: "minor")
+billiejean = Song.create(title: "Billie Jean", artist: mjackson, range_low: 61, range_high: 85, key: "F\u266F", mode: "minor")
 someonelikeyou = Song.create(title: "Someone Like You", artist: adele, range_low: 52, range_high: 76, key: "A", mode: "major")
 torn = Song.create(title: "Torn", artist: nimbruglia, range_low: 53, range_high: 70, key: "Gb", mode: "major")
 beforehecheats = Song.create(title: "Before He Cheats", artist: cunderwood, range_low: 54, range_high: 73, key: "F#", mode: "minor")
@@ -34,6 +32,7 @@ allofme = Song.create(title: "All of Me", artist: jlegend, range_low: 60, range_
 letitgo = Song.create(title: "Let It Go", artist: imenzel, range_low: 53, range_high: 75, key: "Ab", mode: "major")
 legohouse = Song.create(title: "Lego House", artist: esheeran, range_low: 57, range_high: 81, key: "A", mode: "major")
 crymeariver = Song.create(title: "Cry Me a River", artist: jtimberlake, range_low: 60, range_high: 83, key: "G#", mode: "minor")
+stillintoyou = Song.create(title: "Still Into You", artist: hwilliams, range_low: 0, range_high: 127)
 
 puts "Adding tags"
 someonelikeyou.tag_list.add("belting", "warm", "soulful")
