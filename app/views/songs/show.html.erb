@@ -4,8 +4,9 @@
 by <%= @song.artist.name %><br><br>
 
 <p>Key: <%= @song.key %></p>
-<p>Vocal Range: <%= @song.midi_to_named(@song.range_low) %> to <%= @song.midi_to_named(@song.range_high) %></p>
-<p>Tempo: <%= @tempo %>bpm</p>
+<p>Vocal Range: <%= @song.midi_to_named(@song.range_low) %> to <%= @song.midi_to_named(@song.range_high) %> </p>
+<p>Tempo: <%= @tempo %>bpm </p>
+<p>Key: <%= @key %> </p>
 <p>Tags: <%= raw @song.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 
 </div>
