@@ -1,0 +1,66 @@
+
+"Who do you sing like?"
+  artist choices
+  maybe use an angular typey data binding thing?
+    ** no. angular is rage-inducing.
+
+"What do you feel like singing?"
+  power ballad, 90's pop, crowd pleaser, etc choices
+
+artist's range? or just derive from song range? idk
+
+song range
+song style
+
+My: database of artists, ranges, style tags
+Echonest: all other metadata lol
+
+?!?!TAGS!!??!
+(song tags)
+  - belty
+  - breathy
+  - sweet
+  - sassy
+  - smoky
+  - smooth
+  - dark
+  - gravelly
+  - warm
+  - bright
+  - soulful
+  - youthful
+  - light
+  - complex runs
+  - falsetto
+  - layered harmonies
+  - raspy
+
+
+Songy Things:
+  lowest note (my db)
+  highest note (my db)
+  tags (my db)
+  genre (echonest [artist only])
+  language (echonest?)
+  tempo (echonest audio_summary)
+  year (echonest)
+
+Artists To Add:
+  Female
+    Adele (belty, warm, dark) - pop kinda
+    Amy Winehouse (smoky, dark, gravelly) - r&bish type stuff
+    Madonna (bright, sweet) - pop
+    Carrie Underwood (smooth, sassy, belty) - country
+    Idina Menzel (belty, bright, sweet)
+    Whitney Houston
+    Mariah Carey
+    Alicia Keys
+    Britney Spears
+    Celine Dion
+    Hayley Williams
+
+
+  Male
+    John Legend (dark, belty, smoky)
+    Michael Jackson (bright, sassy)
+
