@@ -1,5 +1,6 @@
 class Artist < ActiveRecord::Base
   has_many :songs
+  acts_as_taggable
   accepts_nested_attributes_for :songs, allow_destroy: true
 
   def midi_to_named(midi)
@@ -7,5 +8,15 @@ class Artist < ActiveRecord::Base
     octave = midi / 12 - 1
     index = midi % 12
     note_letters[index]+octave.to_s
+  end
+
+  rails_admin do
+    field :name
+    field :alt_name
+    field :gender
+    field :voice_type
+    field :range_low
+    field :range_high
+    field :tags
   end
 end
