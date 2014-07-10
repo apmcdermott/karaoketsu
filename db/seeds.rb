@@ -34,20 +34,20 @@ legohouse = Song.create(title: "Lego House", artist: esheeran, range_low: 57, ra
 crymeariver = Song.create(title: "Cry Me a River", artist: jtimberlake, range_low: 60, range_high: 83, key: "G#", mode: "minor")
 stillintoyou = Song.create(title: "Still Into You", artist: hwilliams, range_low: 0, range_high: 127)
 
-# puts "Adding tags"
-# someonelikeyou.tag_list.add("belting", "warm", "soulful")
-# torn.tag_list.add("bright")
-# beforehecheats.tag_list.add("belting", "sassy")
-# cowboycasanova.tag_list.add("belting")
-# athousandyears.tag_list.add("breathy", "sweet")
-# allofme.tag_list.add("belting", "falsetto")
-# letitgo.tag_list.add("belting", "bright")
+puts "Adding tags"
+someonelikeyou.tag_list.add("belting", "warm", "soulful")
+torn.tag_list.add("bright")
+beforehecheats.tag_list.add("belting", "sassy")
+cowboycasanova.tag_list.add("belting")
+athousandyears.tag_list.add("breathy", "sweet")
+allofme.tag_list.add("belting", "falsetto")
+letitgo.tag_list.add("belting", "bright")
 
-# puts "Saving tags"
-# someonelikeyou.save
-# torn.save
-# beforehecheats.save
-# cowboycasanova.save
-# athousandyears.save
-# allofme.save
-# letitgo.save
+puts "Saving tags"
+someonelikeyou.save
+torn.save
+beforehecheats.save
+cowboycasanova.save
+athousandyears.save
+allofme.save
+letitgo.save
