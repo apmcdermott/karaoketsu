@@ -2,7 +2,7 @@
 <h2><%= @artist.name %></h2>
 
 Gender: <%= @artist.gender.capitalize %><br>
-Range: <%= @artist.midi_to_named(@artist.range_low) %> to <%= @artist.midi_to_named(@artist.range_high) %><br>
+Range: <%= midi_to_named(@artist.range_low) %> to <%= midi_to_named(@artist.range_high) %><br>
 Songs:
 <ul>
   <% @songs.each do |song| %>

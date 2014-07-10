@@ -19,6 +19,6 @@
   <% @songs.each do |song| %>
     <p class="h3"><%= link_to song.title, song_path(song.id) %></p>
     <p class="h4"><%= link_to song.artist_name, artist_path(id: song.artist_id) %></p>
-    <p><%= song.midi_to_named(song.range_low) %> &ndash; <%= song.midi_to_named(song.range_high) %></p>
+    <p><%= midi_to_named(song.range_low) %> &ndash; <%= midi_to_named(song.range_high) %></p>
     <hr>
   <% end %>

@@ -1,9 +1,9 @@
 <div class="col-xs-12">
 <h2><%= @song.title %></h2>
 
-by <%= @song.artist.name %><br><br>
+by <%= @song.artist_name %><br><br>
 
-<p>Vocal Range: <%= @song.midi_to_named(@song.range_low) %> to <%= @song.midi_to_named(@song.range_high) %> </p>
+<p>Vocal Range: <%= midi_to_named(@song.range_low) %> to <%= midi_to_named(@song.range_high) %> </p>
 <p>Tempo: <%= @tempo %> bpm </p>
 <p>Key: <%= @key %> </p>
 <p>Tags: <%= raw @song.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
