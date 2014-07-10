@@ -15,7 +15,13 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def show
     @song = Song.find(params[:id])
-    artist = @song.artist.name
+
+    if @song.artist.alt_name?
+      artist = @song.artist.alt_name
+    else
+      artist = @song.artist.name
+    end
+
     title = @song.title
 
     # Begin Echonest Stuff
