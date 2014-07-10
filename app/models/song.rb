@@ -8,14 +8,4 @@ class Song < ActiveRecord::Base
     key_modes = %w(minor major)
     key_letters[key_number] + ' ' + key_modes[mode_number]
   end
-
-  rails_admin do
-    field :title
-    field :artist_name do
-      label "Artist"
-    end
-    field :range_low
-    field :range_high
-    field :tags
-  end
 end
