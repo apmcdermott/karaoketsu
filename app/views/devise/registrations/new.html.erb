@@ -34,10 +34,10 @@
   <div>If you know your range, enter it in here:</div>
 
   <div><%= f.label :range_low, "Lowest Note (E2)" %><br />
-    <%= f.text_field :range_low %></div>
+    <%= f.text_field :range_low, value: current_user.artist.range_low %></div>
 
   <div><%= f.label :range_high,"Highest Note C6" %><br />
-    <%= f.text_field :range_high %></div>
+    <%= f.text_field :range_high, value: current_user.artist.range_high %></div>
 
   <div><%= f.submit "Sign up" %></div>
 
