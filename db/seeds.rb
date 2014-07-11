@@ -3,10 +3,6 @@ Artist.delete_all
 Song.delete_all
 User.delete_all
 
-puts "Creating users"
-mandy = User.create(email: "mandy@example.com", password: "password", admin: true, range_low: 48, range_high: 83)
-joe = User.create(email: "joe@example.com", password: "password", admin: false)
-
 singers = []
 
 puts "Creating dude singers"
@@ -40,7 +36,7 @@ songs << stillintoyou = Song.create(title: "Still Into You", artist: hwilliams, 
 songs << onlyexception = Song.create(title: "The Only Exception", artist: hwilliams, range_low: 54, range_high: 75, key: 11, mode: 1)
 songs << aintitfun = Song.create(title: "Ain't It Fun", artist: hwilliams, range_low: 59, range_high: 73, key: 4, mode: 1)
 
-puts "Adding voice tags"
+puts "Adding artist voice tags"
 mjackson.tag_list.add("falsetto", "breathy", "nasal")
 jlegend.tag_list.add("belting", "smoky")
 jtimberlake.tag_list.add("falsetto", "complex vocal runs", "nasal")
@@ -52,27 +48,43 @@ awinehouse.tag_list.add("dark", "smoky")
 hwilliams.tag_list.add("bright", "youthful")
 adele.tag_list.add("warm", "soulful")
 
-puts "Saving artist tags"
+puts "Saving artist voice tags"
 singers.each do |singer|
   singer.save
 end
 
 puts "Adding song tags"
-billiejean.tag_list.add("falsetto", "breathy", "nasal", "funky", "pop")
-someonelikeyou.tag_list.add("belting", "warm", "soulful")
-torn.tag_list.add("bright", "love", "pop")
-beforehecheats.tag_list.add("belting", "bright", "sassy", "country")
-cowboycasanova.tag_list.add("belting", "bright", "sassy", "country")
-athousandyears.tag_list.add("breathy", "sweet", "simple", "love")
-allofme.tag_list.add("belting", "smoky", "falsetto", "love", "ballad")
-letitgo.tag_list.add("belting", "bright", "anthemic", "soundtrack")
-legohouse.tag_list.add("love", "breathy", "acoustic", "complex vocal runs")
-crymeariver.tag_list.add("falsetto", "complex vocal runs", "nasal", "funky", "pop")
-stillintoyou.tag_list.add("rock", "love", "bright", "youthful", "anthemic")
-onlyexception.tag_list.add("love", "acoustic", "rock", "bright", "youthful")
-aintitfun.tag_list.add("rock", "bright", "youthful", "layered harmonies")
+billiejean.tag_list.add(mjackson.tag_list << ["funky", "pop"])
+someonelikeyou.tag_list.add(adele.tag_list << ["belting", "ballad"])
+torn.tag_list.add(nimbruglia.tag_list << ["bright", "love", "pop"])
+beforehecheats.tag_list.add(cunderwood.tag_list << ["sassy", "country"])
+cowboycasanova.tag_list.add(cunderwood.tag_list << ["sassy", "country"])
+athousandyears.tag_list.add(cperri.tag_list << ["simple", "love"])
+allofme.tag_list.add(jlegend.tag_list << ["falsetto", "love", "ballad"])
+letitgo.tag_list.add(imenzel.tag_list << ["anthemic", "soundtrack"])
+legohouse.tag_list.add(esheeran.tag_list << ["love", "acoustic"])
+crymeariver.tag_list.add(jtimberlake.tag_list << ["funky", "pop"])
+stillintoyou.tag_list.add(hwilliams.tag_list << ["rock", "love", "anthemic"])
+onlyexception.tag_list.add(hwilliams.tag_list << ["love", "acoustic", "rock"])
+aintitfun.tag_list.add(hwilliams.tag_list << ["rock", "layered harmonies"])
 
 puts "Saving song tags"
 songs.each do |song|
   song.save
 end
+
+users = []
+
+puts "Creating users"
+users << mandy = User.create(email: "mandy@example.com", password: "password", admin: true, artist: adele, range_low: adele.range_low, range_high: adele.range_high)
+users << joe = User.create(email: "joe@example.com", password: "password", admin: false)
+
+puts "Adding user voice tags"
+mandy.tag_list.add(adele.tag_list)
+joe.tag_list.add(mjackson.tag_list)
+
+puts "Saving user voice tags"
+users.each do |user|
+  user.save
+end
+
