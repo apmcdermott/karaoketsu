@@ -3,7 +3,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-6 dashboard">
+    <div class="col-sm-6">
       <h3>My Profile <small><%= link_to ("<span class='glyphicon glyphicon-pencil edit'></span>").html_safe, edit_user_registration_path %></small></h3>
 
       <% if current_user.first_name != "" %>
@@ -22,7 +22,7 @@
 
     </div> <!-- /col-sm-6 -->
 
-    <div class="col-sm-6 dashboard">
+    <div class="col-sm-6">
       <h3>Sing Something!</h3>
       <div>
         What are you in the mood for?
@@ -37,4 +37,20 @@
     </div> <!-- /col-sm-6 -->
 
   </div> <!-- /row -->
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Songs in my range</h3>
+      <% @songs_in_range.each do |song| %>
+        "<%= song.title %>" by <%= song.artist_name %><br>
+      <% end %>
+    </div>
+
+    <div class="col-sm-6">
+      <h3><%= current_user.artist.name %>-style songs</h3>
+      <% @songs_in_style.each do |song| %>
+        "<%= song.title %>" by <%= song.artist_name %><br>
+      <% end %>
+    </div>
+  </div>
 </div> <!-- /container-fluid -->
