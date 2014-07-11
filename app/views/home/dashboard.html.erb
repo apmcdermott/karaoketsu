@@ -1,0 +1,29 @@
+<h2>Dashboard</h2>
+<hr />
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 dashboard">
+      <div class="module">
+        <h3 class="profile-inline">My Profile</h3>
+        <%= link_to ("<span class='glyphicon glyphicon-pencil edit'></span>").html_safe, edit_user_registration_path %>
+        <div class="module-content">
+          <strong>Email:</strong> <%= current_user.email %><br>
+          <strong>Singer:</strong> <%= current_user.artist.name %><br>
+          <strong>Last Login:</strong> <%= current_user.last_sign_in_at.localtime.strftime("%B %d, %Y at %I:%M%p") %><br>
+          <small><%= link_to "Edit", edit_user_registration_path %></small>
+        </div>
+      </div>
+    </div> <!-- /col-sm-6 -->
+
+    <div class="col-sm-6 dashboard">
+      <div class="module">
+        <h3 class="profile-inline">Sing Somethin!</h3>
+        <div class="module-content">
+          blerp
+        </div>
+      </div>
+    </div> <!-- /col-sm-6 -->
+
+  </div> <!-- /row -->
+</div> <!-- /container-fluid -->
