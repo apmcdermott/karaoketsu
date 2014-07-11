@@ -1,5 +1,9 @@
+<div class="container container-blah">
+
 <div class="col-xs-12">
   <% @artists.each do |artist| %>
     <h3><%= link_to artist.name, artist %> <small><%= artist.voice_type.titleize %></small></h3>
   <% end %>
+</div>
+
 </div>

@@ -1,3 +1,4 @@
+<div class="container container-blah">
 <div class="col-xs-12">
 <h2><%= @song.title %></h2>
 
@@ -10,4 +11,5 @@
 <p>Key: <%= @key %> </p>
 <p>Tags: <%= raw @song.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 
+</div>
 </div>
