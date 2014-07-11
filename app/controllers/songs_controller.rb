@@ -38,31 +38,6 @@ before_action :authenticate_user!, except: [:index, :show]
     @key = @song.key_name(echonest_key, echonest_mode)
   end
 
-  def new
-    @song = Song.new
-  end
-
-  def create
-    @song = Song.create(song_params)
-    if @song.save
-      flash[:notice] = 'Song successfully created'
-      redirect_to songs_path
-    else
-      flash.now[:error] = @song.errors.full_messages.join(', ')
-      render :new
-    end
-  end
-
-  def edit
-    @song = Song.find(params[:id])
-  end
-
-  def update
-    song = Song.find(params[:id])
-    song.update(song_params)
-    redirect_to songs_path
-  end
-
 private
 
   def sort_column
