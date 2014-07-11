@@ -30,6 +30,8 @@
   <div><%= f.label :range_high,"Highest Note C6" %><br />
     <%= f.text_field :range_high, value: current_user.artist.range_high %></div>
 
+  <div><%= f.submit "Update Snapshot", :class => "btn btn-primary" %></div>
+
 
   <h3>Account Settings</h3>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -48,11 +50,11 @@
   <div><%= f.label :current_password %> <i>(if you changed your email or password)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
-  <div><%= f.submit "Update" %></div>
+  <div><%= f.submit class: "btn btn-primary" %></div>
 <% end %>
 <hr>
 <h4>Cancel my account</h4>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-default" %></p>
 
 <%= link_to "Back", :back %>
