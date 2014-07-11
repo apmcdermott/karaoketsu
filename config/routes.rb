@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root :to => 'home#index'
 
-  get '/profile' to: 'home#dashboard'
+  get '/profile', to: 'home#dashboard'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 

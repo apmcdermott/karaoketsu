@@ -5,6 +5,10 @@ class RegistrationsController < Devise::RegistrationsController
     @artists = Artist.all
   end
 
+  def after_update_path_for(resource)
+    profile_path
+  end
+
   def update
     @user = User.find(current_user.id)
 
