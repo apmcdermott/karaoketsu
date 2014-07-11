@@ -76,8 +76,9 @@ ActiveRecord::Schema.define(version: 20140711011423) do
     t.boolean  "admin",                  default: false
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "range_low",              default: 0
-    t.integer  "range_high",             default: 127
+    t.integer  "sounds_like"
+    t.integer  "range_low",              default: -1
+    t.integer  "range_high",             default: 128
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
