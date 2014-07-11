@@ -5,6 +5,8 @@
     <p>
       Gender: <%= @artist.gender.capitalize %><br>
       Range: <%= midi_to_named(@artist.range_low) %> to <%= midi_to_named(@artist.range_high) %><br>
+      Vocal Type: <%= @artist.voice_type.titleize %><br>
+      <p>Tags: <%= raw @artist.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
     </p>
 
     <div class="row">

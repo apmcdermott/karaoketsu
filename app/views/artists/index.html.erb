@@ -1,5 +1,5 @@
 <div class="col-xs-12">
   <% @artists.each do |artist| %>
-    <h3><%= link_to artist.name, artist %> <small><%= artist.voice_type %></small></h3>
+    <h3><%= link_to artist.name, artist %> <small><%= artist.voice_type.titleize %></small></h3>
   <% end %>
 </div>
