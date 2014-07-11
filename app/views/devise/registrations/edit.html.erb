@@ -13,7 +13,7 @@
   <% if current_user.artist %>
     <%= f.label :artist, "You love singing along to:" %><br>
       <% options = options_from_collection_for_select(@artists, "id", "name", "#{current_user.artist_id}") %>
-      <%= f.select :artist,  options %>
+      <%= f.select :artist_id,  options %>
   <% else %>
     <div>
       <%= f.label :artist, "Who do you love singing along to?" %><br>
@@ -24,11 +24,11 @@
 
   <div>If you know your range, enter it in here:</div>
 
-  <div><%= f.label :range_low, "Lowest Note" %><br />
-    <%= f.text_field :range_low %></div>
+  <div><%= f.label :range_low, "Lowest Note (E2)" %><br />
+    <%= f.text_field :range_low, value: current_user.artist.range_low %></div>
 
-  <div><%= f.label :range_high,"Highest Note" %><br />
-    <%= f.text_field :range_high %></div>
+  <div><%= f.label :range_high,"Highest Note C6" %><br />
+    <%= f.text_field :range_high, value: current_user.artist.range_high %></div>
 
 
   <h3>Account Settings</h3>
@@ -45,7 +45,7 @@
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <div><%= f.label :current_password %> <i>(if you changed your email or password)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
   <div><%= f.submit "Update" %></div>
