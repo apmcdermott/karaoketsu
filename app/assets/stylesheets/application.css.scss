@@ -15,12 +15,21 @@
  */
 
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap.min.css";
+
+body {
+  min-height: 200px;
+  padding-top: 80px;
+}
 
 .current {
   padding-right: 12px;
   background-repeat: no-repeat;
   background-position: right center;
+}
+
+.sorter {
+  color: #FFF;
 }
 
 .sorter.disabled:after {
@@ -65,4 +74,8 @@
   .s { font-size: 0.8em; }
   .m { font-size: 1.2em; }
   .l { font-size: 1.8em; }
+}
+
+.signup {
+  margin: 1em 0;
 }

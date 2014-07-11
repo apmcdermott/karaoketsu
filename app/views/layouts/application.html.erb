@@ -8,30 +8,39 @@
 </head>
 <body>
 
-  <% flash.each do |name, msg| %>
-    <% if msg.is_a?(String) %>
-      <%= content_tag :div, msg, :class => "flash_#{name}" %>
-    <% end %>
-  <% end %>
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Karao-ke-tsu', root_path, :class => "navbar-brand" %>
+    </div>
+    <div class="navbar-collapse collapse">
 
-  <ul class="hmenu">
-    <%= render 'devise/menu/registration_items' %>
-    <%= render 'devise/menu/login_items' %>
-  </ul>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Browse Artists', artists_path %></li>
+        <li><%= link_to 'Browse Songs', songs_path %></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= render 'devise/menu/registration_items' %></li>
+        <li><%= render 'devise/menu/login_items' %></li>
+      </ul>
+
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
 
 <div class="container">
-
-
-  <h1>Derp Flerp Smerp</h1>
-
-  <h4>
-    <%= link_to '(home)', root_path %> .
-    <%= link_to '(artists)', artists_path %> .
-    <%= link_to '(songs)', songs_path %>
-  </h4>
+  <%= render 'layouts/flash', flash: flash %>
 
   <%= yield %>
-
 
 </div>
 

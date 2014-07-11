@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   before_action :set_artists
 
   def set_artists
-    @artists = Artist.all
+    @artists = Artist.all.order(:name)
   end
 
   def after_update_path_for(resource)

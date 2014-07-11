@@ -1,46 +1,57 @@
 <h2>Sign up</h2>
+<hr>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="row">
 
-  <div><%= f.label :first_name %><br />
-    <%= f.text_field :first_name %></div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+<div class="col-sm-4">
+      <h3>Account</h3>
+      <div><%= f.label :first_name %><br />
+        <%= f.text_field :first_name %></div>
 
-  <div><%= f.label :last_name %><br />
-    <%= f.text_field :last_name %></div>
+      <div><%= f.label :last_name %><br />
+        <%= f.text_field :last_name %></div>
 
-  <div>
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+      <div>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div>
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div>
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
   </div>
 
-  <div>
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="col-sm-4">
+    <h3>Vocal Snapshot</h3>
+    <div>
+      <%= f.label :artist, "Who do you feel most comfortable singing?" %><br>
+      <% options = options_from_collection_for_select(@artists, 'id', 'name') %>
+      <%= f.select :artist_id,  options %>
+    </div>
+    <br>
+
+    <!--
+    <div>If you know your range, enter it in here:</div>
+
+    <div><%= f.label :range_low, "Lowest Note (MIDI)" %><br />
+      <%= f.text_field :range_low %></div>
+
+    <div><%= f.label :range_high,"Highest Note (MIDI)" %><br />
+      <%= f.text_field :range_high %></div>
+      -->
+
+    <div><%= f.submit "Sign up", :class => "btn btn-success signup" %></div>
+
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <h3>Vocal Snapshot</h3>
-  <div>
-    <%= f.label :artist, "Who do you love singing along to?" %><br>
-    <% options = options_from_collection_for_select(@artists, 'id', 'name') %>
-    <%= f.select :artist_id,  options %>
-  </div>
-
-  <div>If you know your range, enter it in here:</div>
-
-  <div><%= f.label :range_low, "Lowest Note (E2)" %><br />
-    <%= f.text_field :range_low, value: current_user.artist.range_low %></div>
-
-  <div><%= f.label :range_high,"Highest Note C6" %><br />
-    <%= f.text_field :range_high, value: current_user.artist.range_high %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
