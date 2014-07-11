@@ -3,8 +3,9 @@ Artist.delete_all
 Song.delete_all
 User.delete_all
 
-puts "Creating admin"
-mandy = User.create(email: "mandy@example.com", password: "password", admin: true)
+puts "Creating users"
+mandy = User.create(email: "mandy@example.com", password: "password", admin: true, range_low: 48, range_high: 83)
+joe = User.create(email: "joe@example.com", password: "password", admin: false)
 
 singers = []
 
@@ -21,7 +22,7 @@ singers << cperri = Artist.create(name: "Christina Perri", gender: "female", ran
 singers << imenzel = Artist.create(name: "Idina Menzel", gender: "female", range_low: 53, range_high: 82, voice_type: "mezzo-soprano")
 singers << adele = Artist.create(name: "Adele", gender: "female", range_low: 48, range_high: 76, voice_type: "contralto")
 singers << awinehouse = Artist.create(name: "Amy Winehouse", gender: "female", range_low: 50, range_high: 87, voice_type: "contralto")
-singers << hwilliams = Artist.create(name: "Hayley Williams", alt_name: "Paramore", gender: "female", range_low: 46, range_high: 78, voice_type: "Mezzo-soprano")
+singers << hwilliams = Artist.create(name: "Hayley Williams", alt_name: "Paramore", gender: "female", range_low: 46, range_high: 78, voice_type: "mezzo-soprano")
 
 songs = []
 puts "Creating songs"
@@ -57,7 +58,7 @@ singers.each do |singer|
 end
 
 puts "Adding song tags"
-billiejean.tag_list.add("falsetto", "funky", "pop")
+billiejean.tag_list.add("falsetto", "breathy", "nasal", "funky", "pop")
 someonelikeyou.tag_list.add("belting", "warm", "soulful")
 torn.tag_list.add("bright", "love", "pop")
 beforehecheats.tag_list.add("belting", "bright", "sassy", "country")
