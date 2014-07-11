@@ -37,9 +37,9 @@ songs << onlyexception = Song.create(title: "The Only Exception", artist: hwilli
 songs << aintitfun = Song.create(title: "Ain't It Fun", artist: hwilliams, range_low: 59, range_high: 73, key: 4, mode: 1)
 
 puts "Adding artist voice tags"
-mjackson.tag_list.add("falsetto", "breathy", "nasal")
+mjackson.tag_list.add("falsetto", "breathy")
 jlegend.tag_list.add("belting", "smoky")
-jtimberlake.tag_list.add("falsetto", "complex vocal runs", "nasal")
+jtimberlake.tag_list.add("falsetto", "complex vocal runs")
 nimbruglia.tag_list.add("bright", "sweet")
 cunderwood.tag_list.add("belting", "bright")
 cperri.tag_list.add("breathy", "sweet")
