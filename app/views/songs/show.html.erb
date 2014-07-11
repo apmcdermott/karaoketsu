@@ -1,7 +1,9 @@
 <div class="col-xs-12">
 <h2><%= @song.title %></h2>
 
-by <%= @song.artist_name %><br><br>
+  <%= @song.artist_name %><% if @song.artist.alt_name? %> (of <%= @song.artist.alt_name %>)<% end %>
+
+  <br><br>
 
 <p>Vocal Range: <%= midi_to_named(@song.range_low) %> to <%= midi_to_named(@song.range_high) %> </p>
 <p>Tempo: <%= @tempo %> bpm </p>
