@@ -13,7 +13,7 @@ You can sign up for a developer account [here](https://developer.echonest.com/ac
 
 Git yoself an API key.
 
-Put your keys in your `.env` file:
+Create a `.env` file in your project's main directory, and put your API keys in it:
 ```ruby
 # .env
 API_KEY=(your_echonest_api_key)
