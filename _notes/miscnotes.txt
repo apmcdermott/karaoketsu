@@ -16,11 +16,10 @@ My: database of artists, ranges, style tags
 Echonest: all other metadata lol
 
 ?!?!TAGS!!??!
-(song tags)
+(voice tags)
   - belty
   - breathy
   - sweet
-  - sassy
   - smoky
   - smooth
   - dark
@@ -34,6 +33,12 @@ Echonest: all other metadata lol
   - falsetto
   - layered harmonies
   - raspy
+
+(song tags)
+  - love
+  - ballad
+  - sassy
+  - anthemic
 
 
 Songy Things:
@@ -71,3 +76,5 @@ Artists To Add:
     Bruce Springsteen
     Freddie Mercury
 
+Sing into a tuner to deterine low/high?
+Manually enter lowest note, highest note?
