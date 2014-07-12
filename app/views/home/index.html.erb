@@ -4,7 +4,16 @@
     <p>Let Karao-ke-tsu help you pick out your next sweet tune this weekend.</p>
     <p>Start by choosing your favorite artist to sing along with, what you're in the mood for, and your range (if you know it). Add some black magic, and suddenly you have a killer song to rock out on.</p>
     <p>
-      <a class="btn btn-lg btn-success" role="button">Cowabungaaaaaa</a>
+      <% if user_signed_in? %>
+        <%= link_to profile_path do %>
+          <button class="btn btn-lg btn-success" role="button">Cowabungaaaaaa</button>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_registration_path do %>
+          <button class="btn btn-lg btn-success" role="button">Cowabungaaaaaa</button>
+        <% end %>
+      <% end %>
+
     </p>
   </div>
 </div> <!-- /container -->
