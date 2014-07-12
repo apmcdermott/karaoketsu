@@ -1,59 +1,55 @@
 <div class="container container-blah">
 
-<h2>Dashboard</h2>
-<hr />
+<h2><% if current_user.first_name != "" || false %><%= current_user.first_name %>'s <% end %>Dashboard</h2>
+  <hr />
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>My Profile <small><%= link_to ("<span class='glyphicon glyphicon-pencil edit'></span>").html_safe, edit_user_registration_path %></small></h3>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-6">
-      <h3>My Profile <small><%= link_to ("<span class='glyphicon glyphicon-pencil edit'></span>").html_safe, edit_user_registration_path %></small></h3>
+        <strong>Email:</strong> <%= current_user.email %><br>
+        <strong>Singer:</strong> <%= current_user.artist.name %><br>
+        <strong>Range:</strong>
+          <% if current_user.range_low == -1 %>
+            <%= midi_to_named(current_user.artist.range_low) %> - <%= midi_to_named(current_user.artist.range_high) %>
+          <% else %>
+            <%= midi_to_named(current_user.range_low) %> - <%= midi_to_named(current_user.range_high) %>
+          <% end %><br>
+        <strong>Last Login:</strong> <%= current_user.last_sign_in_at.localtime.strftime("%B %d, %Y at %I:%M%p") %><br>
+        <small><%= link_to "Edit", edit_user_registration_path %></small>
 
-      <% if current_user.first_name != "" %>
-        <strong>Hey, <%= current_user.first_name %>!</strong><br><br>
-      <% end %>
-      <strong>Email:</strong> <%= current_user.email %><br>
-      <strong>Singer:</strong> <%= current_user.artist.name %><br>
-      <strong>Range:</strong>
-        <% if current_user.range_low == -1 %>
-          <%= midi_to_named(current_user.artist.range_low) %> - <%= midi_to_named(current_user.artist.range_high) %>
-        <% else %>
-          <%= midi_to_named(current_user.range_low) %> - <%= midi_to_named(current_user.range_high) %>
-        <% end %><br>
-      <strong>Last Login:</strong> <%= current_user.last_sign_in_at.localtime.strftime("%B %d, %Y at %I:%M%p") %><br>
-      <small><%= link_to "Edit", edit_user_registration_path %></small>
+      </div> <!-- /col-sm-6 -->
 
-    </div> <!-- /col-sm-6 -->
+      <div class="col-sm-6">
+        <h3>Sing Something!</h3>
+        <div>
+          What are you in the mood for?
 
-    <div class="col-sm-6">
-      <h3>Sing Something!</h3>
-      <div>
-        What are you in the mood for?
+          <div id="tag_cloud">
+            <% tag_cloud Song.tag_counts, %w{s m l} do |tag, css_class| %>
+              <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+            <% end %>
+          </div>
 
-        <div id="tag_cloud">
-          <% tag_cloud Song.tag_counts, %w{s m l} do |tag, css_class| %>
-            <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-          <% end %>
         </div>
+      </div> <!-- /col-sm-6 -->
 
+    </div> <!-- /row -->
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>Songs in my range</h3>
+        <% @songs_in_range.each do |song| %>
+          "<%= song.title %>" by <%= song.artist_name %><br>
+        <% end %>
       </div>
-    </div> <!-- /col-sm-6 -->
 
-  </div> <!-- /row -->
-
-  <div class="row">
-    <div class="col-sm-6">
-      <h3>Songs in my range</h3>
-      <% @songs_in_range.each do |song| %>
-        "<%= song.title %>" by <%= song.artist_name %><br>
-      <% end %>
-    </div>
-
-    <div class="col-sm-6">
-      <h3><%= current_user.artist.name %>-style songs</h3>
-      <% @songs_in_style.each do |song| %>
-        "<%= song.title %>" by <%= song.artist_name %><br>
-      <% end %>
+      <div class="col-sm-6">
+        <h3><%= current_user.artist.name %>-style songs</h3>
+        <% @songs_in_style.each do |song| %>
+          "<%= song.title %>" by <%= song.artist_name %><br>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 </div>
