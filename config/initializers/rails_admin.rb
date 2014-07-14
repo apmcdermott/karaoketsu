@@ -29,6 +29,24 @@ RailsAdmin.config do |config|
   config.included_models = [Tag, Artist, User, Song]
 
   # == custom model configurations ==
+  config.model 'User' do
+    field :first_name
+    field :last_name
+    field :email
+    field :artist
+    field :range_low do
+      label "Low"
+    end
+    field :range_high do
+      label "High"
+    end
+    field :created_at
+    field :admin
+    field :sign_in_count do
+      label "Signins"
+    end
+  end
+
   config.model 'Artist' do
     field :name
     field :alt_name
