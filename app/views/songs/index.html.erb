@@ -2,19 +2,19 @@
 
 <h2><%= @page_title %></h2>
   <p>
-    <button class="btn btn-default">
+    <button class="btn btn-sort">
       <%= sortable "title", "title" %>
     </button>
 
-    <button class="btn btn-default">
+    <button class="btn btn-sort">
       <%= sortable "artists.name", "artist" %>
     </button>
 
-    <button class="btn btn-default">
+    <button class="btn btn-sort">
       <%= sortable "range_high", "highest note", "desc" %>
     </button>
 
-    <button class="btn btn-default">
+    <button class="btn btn-sort">
       <%= sortable "range_low", "lowest note" %>
     </button>
   </p>
