@@ -31,6 +31,18 @@ body {
   background-color: transparent;
 }
 
+.container {
+  @media (min-width:768px) {
+      width: 700px;
+  }
+  @media (min-width:992px) {
+      width: 900px;
+  }
+  @media (min-width:1200px) {
+      width: 1000px;
+  }
+}
+
 .container-blah {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
@@ -40,6 +52,10 @@ body {
 .jumbotron{
   background-color: rgba(255, 255, 255, 0.75);
   margin: 60px;
+  @media (max-width: 767px) {
+    margin: 20px;
+    p {font-size: 18px;}
+  }
 }
 
 .current {
@@ -93,6 +109,13 @@ body {
   .s { font-size: 0.8em; }
   .m { font-size: 1.2em; }
   .l { font-size: 1.8em; }
+}
+
+.btn-sort {
+  a {color: black;}
+  background-color: transparent;
+  border-color: #95a5a6;
+  padding: 5px 10px;
 }
 
 .signup {
